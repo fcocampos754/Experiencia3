@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Caos News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static '/img/CaosNews/Logo_CaosNews.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/estilosvideos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fondo.css' %}">
+</head>
+<body>
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><!--Logo de la pagina que lleva a la pagina de inicio-->
+                <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" alt="Caosnews" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_we' %}">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'noticias' %}">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tiempo' %}">Clima</a>
+                    </li>
+                </ul>
+              <!--Barra de busqueda-->
+              <div style="text-align: center; height: auto; width: auto;">
+                <form class="d-flex" role="search" style="margin-right: 10px;">
+                  <input class="form-control me-2" type="search" placeholder="buscar noticia" aria-label="search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+              </div><br>
+              <!--opciones de autenticacion-->
+              <div class="d-flex">
+                  <a style="margin-right: 10px; margin-left: 10px;" class="btn btn-primary" href="{% url 'login' %}" role="button">Iniciar Sesión</a>
+                  <a class="btn btn-outline-secondary" href="{% url 'register' %}" role="button">Registrarse</a>
+              </div>
+            </div>
+        </div>
+    </nav>
+    <!--Fin del menu-->
+
+    <!--Carrusel-->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col">
+          <h2 style="color: whitesmoke;">Noticias Destacadas</h2>
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static '/img/Noticias/Nacionales/VueltaaCasa.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="font-weight: bold; background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));">Falla del Metro</h5>
+                  <p style="background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));">Aumenta el estrés en los ciudadanos de la región metropolitana con constantes fallas en el metro que los deja sin transporte.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static '/img/Noticias/Nacionales/IncendioVitacura.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="font-weight: bold; background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));">Incendio en la comuna de Vitacura</h5>
+                  <p style="background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));">Gran incendio en la azotea de un edificio en la comuna de Vitacura, videos sobre el incidente inhundan las redes sociales.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static '/img/Noticias/Deporte/ColoColovsBoca.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="font-weight: bold; background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));">Colo Colo en racha</h5>
+                  <p style="background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4));">El equipo "albo" se encuentra en su mejor momento y va subiendo en la liga Chilena a un ritmo sorprendente.</p>
+                </div>
+              </div>
+            </div>
+            <!--Boton Anterior-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <!--Boton Siguiente-->
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Carrusel-->
+
+    <!--Videos-->
+    <div class="video-container">
+      <div class="video">
+        <h2>Destacado Nacionales</h2>
+        <iframe src="https://www.youtube.com/embed/DPN4jxWO-dc" frameborder="0" allowfullscreen></iframe>
+        <p>Hombre se niega a quedarse como vocal de mesa y huye diciendo que tiene la "guagua" sola en la casa.</p>
+      </div>
+      <div class="video">
+        <h2>Destacado Internacionales</h2>
+        <iframe src="https://www.youtube.com/embed/QA-OFr3Y55A" frameborder="0" allowfullscreen></iframe>
+        <p>Presidente Norte Americano conocido como Donald Trump es declarado culpable por abusos y otras causales.</p>
+      </div>
+      <div class="video">
+        <h2>Destacado Deportes</h2>
+        <iframe src="https://www.youtube.com/embed/YVQ7DSywNxc" frameborder="0" allowfullscreen></iframe>
+        <p>De Tocopilla para el mundo!, Alexis Sanchez se convierte en el mejor jugador de Francia.</p>
+      </div>
+    </div>
+    <!--videos-->
+    
+    <!--Footer-->
+    <footer class="text-center text-lg-start text-white" style="background-color: #323232;">
+      <div class="container p-4 pb-0">
+        <div class="row">
+          <!--Empresa-->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <!--Nombre-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" height="30" width="30">
+              caos news
+            </h6>
+            <!--Descripcion-->
+            <p>
+              Dispuestos a colaborar informandote día a día en donde
+              quiera que te encuentres, desde un móvil, computadora, tableta
+              o cualquier medio digital que tengas disponible.
+            </p>
+          </div>
+          
+          <!--Colaboradores-->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              colaboradores
+            </h6>
+            <!--Nombres-->
+            <p class="text-white">
+              Rodrigo Mendoza
+            </p>
+            <p class="text-white">
+              Francisco Campos
+            </p>
+            <p class="text-white">
+              Mariangeles Robinson
+            </p>
+            <p class="text-white">
+              Cachupin
+            </p>
+          </div>
+
+          <!--Patrocinadores-->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Patrocinadores
+            </h6>
+            <!--Nombres-->
+            <p>
+              <a class="text-white" href="https://www.meganoticias.cl" target="_blank">Mega Noticias</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.24horas.cl" target="_blank">24 Horas</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.biobiochile.cl" target="_blank">BioBio</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.chvnoticias.cl" target="_blank">ChvNoticias</a>
+            </p>
+          </div>
+
+          <!--Contacto-->
+          <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Contáctanos
+            </h6>
+            <!--Informacion-->
+            <p>
+              <i class="fas fa-home mr-3">Mensaje Directo</i><br>
+              <a class="text-white" href="{% url 'formulario' %}">Escribenos</a>
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Dirección</i><br>
+              Maipú, Esq. Blanca 8274
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Correo</i><br>
+              contacto@caosnews.cl
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Fono</i><br>
+              +569 85190000
+            </p>
+          </div>
+        </div>
+
+        <!--Copyright-->
+        <div class="row d-flex align-items-center">
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <div class="p-3">
+              @copyright Derechos reservados.
+            </div>
+          </div>
+
+          <!--Redes sociales-->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!--Instagram-->
+            <a
+              class="btn btn-outline-light btn-floating m-1 text-white"
+              role="button"
+              href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"><img src="{% static '/img/CaosNews/instagram.png' %}" width="25" height="25"></i>
+            </a>
+
+            <!--Twiter-->
+            <a
+              class="btn btn-outline-light btn-floating m1 text-white"
+              role="button"
+              href="https://twitter.com/?lang=es" target="_blank">
+              <i class="fab fa-twitter"><img src="{% static '/img/CaosNews/twitter.png' %}" width="25" height="25"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer-->
+
+    
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

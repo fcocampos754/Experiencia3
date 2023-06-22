@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quienes Somos - Caos News</title>
+    <link rel="shortcut icon" href="{% static '/img/CaosNews/Logo_CaosNews.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/AboutEstilo.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fondo.css' %}">
+</head>
+<body>
+    <!--Menú-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><!--Logo de la pagina que lleva a la pagina de inicio-->
+                <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" alt="Caosnews" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'about_we' %}">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'noticias' %}">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tiempo' %}">Clima</a>
+                    </li>
+                </ul>
+              <!--Barra de busqueda-->
+              <div style="text-align: center; height: auto; width: auto;">
+                <form class="d-flex" role="search" style="margin-right: 10px;">
+                  <input class="form-control me-2" type="search" placeholder="buscar noticia" aria-label="search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+              </div><br>
+              <!--opciones de autenticacion-->
+              <div class="d-flex">
+                  <a style="margin-right: 10px; margin-left: 10px;" class="btn btn-primary" href="{% url 'login' %}" role="button">Iniciar Sesión</a>
+                  <a class="btn btn-outline-secondary" href="{% url 'register' %}" role="button">Registrarse</a>
+              </div>
+            </div>
+        </div>
+    </nav><!--Fin del menu-->
+
+    <!--Quienes Somos-->
+    <div class="container-fluid">
+        <br><br>
+        <h1 style="color: whitesmoke; text-align: center; font-family: 'Times New Roman', Times, serif;">
+            ¿Quienes Somos?
+        </h1><br>
+        <p style="color: white; text-align: center; font-size: 14pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Somos un grupo de Jóvenes Chilenos estudiantes de periodismo y comunicación audio visual cansados de los medios tradicionales, por lo que decidimos crear un colectivo
+        </p>
+        <p style="color: white; text-align: center; font-size: 14pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            de noticias llamado "Caos News", en el cual a través de esta página web, logremos entregar información a las personas a través de nuestras noticias
+        </p>
+        <p style="color: white; text-align: center; font-size: 14pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            entregando tanto noticias nacionales como internacionales, haciendo que la lectura y búsqueda de estas sea de una forma mas fácil y amigable para los usuarios.
+        </p>
+        <div style="text-align: center; min-width: 100; min-height: 100;">
+            <img src="{% static '/img/CaosNews/CaosNews.png' %}" alt="Caos News Logo" height="190">
+        </div>
+    </div>
+    <!--Fin de Quienes Somos-->
+
+    <!--Mision-->
+    <div class="container-fluid">
+        <br><br>
+        <h1 style="color: whitesmoke; text-align: center; font-family: 'Times New Roman', Times, serif;">
+            Misión
+        </h1><br>
+        <p style="color: white; text-align: center; font-size: 14pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            "Mantener a nuestros usuarios informados con noticias totalmente verídicas para que puedan estar actualizadas de lo que pasa a nivel nacional como tambien internacional,
+        </p>
+        <p style="color: white; text-align: center; font-size: 14pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            de forma que se puedan informar a traves de cualquier dispositivo en el lugar que esten."
+        </p>
+    </div>
+    <!--Fin de Mision-->
+
+    <!--Vision-->
+    <div class="container-fluid">
+        <br><br>
+        <h1 style="color: whitesmoke; text-align: center; font-family: 'Times New Roman', Times, serif;">
+            Visión
+        </h1><br>
+        <p style="color: white; text-align: center; font-size: 14pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            "Ser la pagina mas reconociada en el la red noticiera a nivel nacional e internacional, que sea distinga por entregar informacion fodedignas y sin corrupcion en nuestras noticias".
+        </p>
+    </div>
+    <!--Fin de Vision-->
+
+    <!--Conoce al equipo-->
+    <div class="container-fluid">
+        <br><br>
+        <h1 style="color: whitesmoke; text-align: center; font-family: 'Times New Roman', Times, serif;">
+            Conoce al equipo
+        </h1><br>
+        <div class="image-container">
+            <div class="image-box">
+              <img src="{% static '/img/CaosNews/perfil1.jpg' %}" alt="Imagen 1">
+              <h3>Lucía Silva</h3>
+              <p>Periodista</p>
+            </div>
+            <div class="image-box">
+              <img src="{% static '/img/CaosNews/perfil2.jpg' %}" alt="Imagen 2">
+              <h3>Alejandro Muñoz</h3>
+              <p>Fotógrafo</p>
+            </div>
+            <div class="image-box">
+              <img src="{% static '/img/CaosNews/perfil3.jpg' %}" alt="Imagen 3">
+              <h3>Julia Torres</h3>
+              <p>Diseñadora</p>
+            </div>
+            <div class="image-box">
+              <img src="{% static '/img/CaosNews/perfil4.jpg' %}" alt="Imagen 4">
+              <h3>Oliver Schmidt</h3>
+              <p>Escritor</p>
+            </div>
+          </div>
+    </div>
+    <!--Fin conoce al equipo-->
+
+    <!--Footer-->
+    <footer class="text-center text-lg-start text-white" style="background-color: #323232;">
+        <div class="container p-4 pb-0">
+            <div class="row">
+                <!--Empresa-->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <!--Nombre-->
+                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                        <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" height="30" width="30">
+                        caos news
+                    </h6>
+                    <!--Descripcion-->
+                    <p>
+                        Dispuestos a colaborar informandote día a día en donde
+                        quiera que te encuentres, desde un móvil, computadora, tableta
+                        o cualquier medio digital que tengas disponible.
+                    </p>
+                </div>
+            
+                <!--Colaboradores-->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <!--Titulo-->
+                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                        colaboradores
+                    </h6>
+                    <!--Nombres-->
+                    <p class="text-white">
+                        Rodrigo Mendoza
+                    </p>
+                    <p class="text-white">
+                        Francisco Campos
+                    </p>
+                    <p class="text-white">
+                        Mariangeles Robinson
+                    </p>
+                    <p class="text-white">
+                        Cachupin
+                    </p>
+                </div>
+  
+                <!--Patrocinadores-->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <!--Titulo-->
+                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                        Patrocinadores
+                    </h6>
+                    <!--Nombres-->
+                    <p>
+                        <a class="text-white" href="https://www.meganoticias.cl" target="_blank">Mega Noticias</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="https://www.24horas.cl" target="_blank">24 Horas</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="https://www.biobiochile.cl" target="_blank">BioBio</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="https://www.chvnoticias.cl" target="_blank">ChvNoticias</a>
+                    </p>
+                </div>
+  
+                <!--Contacto-->
+                <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mt-3">
+                    <!--Titulo-->
+                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                        Contáctanos
+                    </h6>
+                    <!--Informacion-->
+                    <p>
+                        <i class="fas fa-home mr-3">Mensaje Directo</i><br>
+                        <a class="text-white" href="{% url 'formulario' %}">Escribenos</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-home mr-3">Dirección</i><br>
+                        Maipú, Esq. Blanca 8274
+                    </p>
+                    <p>
+                        <i class="fas fa-home mr-3">Correo</i><br>
+                        contacto@caosnews.cl
+                    </p>
+                    <p>
+                        <i class="fas fa-home mr-3">Fono</i><br>
+                        +569 85190000
+                    </p>
+                </div>
+            </div>
+  
+            <!--Copyright-->
+            <div class="row d-flex align-items-center">
+                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                    <div class="p-3">
+                        @copyright Derechos reservados.
+                    </div>
+                </div>
+    
+                <!--Redes sociales-->
+                <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                    <!--Instagram-->
+                    <a
+                        class="btn btn-outline-light btn-floating m-1 text-white"
+                        role="button"
+                        href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"><img src="{% static '/img/CaosNews/instagram.png' %}" width="25" height="25"></i>
+                    </a>
+    
+                    <!--Twiter-->
+                    <a
+                        class="btn btn-outline-light btn-floating m1 text-white"
+                        role="button"
+                        href="https://twitter.com/?lang=es" target="_blank">
+                        <i class="fab fa-twitter"><img src="{% static '/img/CaosNews/twitter.png' %}" width="25" height="25"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

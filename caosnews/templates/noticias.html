@@ -1,0 +1,545 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Caos News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static '/img/CaosNews/Logo_CaosNews.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/estilos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fondo.css' %}">
+</head>
+<body>
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><!--Logo de la pagina que lleva a la pagina de inicio-->
+                <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" alt="Caosnews" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_we' %}">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'tiempo' %}">Clima</a>
+                    </li>
+                </ul>
+              <!--Barra de busqueda-->
+              <div style="text-align: center; height: auto; width: auto;">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="buscar noticia" aria-label="search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+              </div><br>
+              <!--opciones de autenticacion-->
+              <div class="d-flex">
+                  <a style="margin-left: 10px; margin-right: 10px;" class="btn btn-primary" href="{% url 'login' %}" role="button">Iniciar Sesión</a>
+                  <a class="btn btn-outline-secondary" href="{% url 'register' %}" role="button">Registrarse</a>
+              </div>
+            </div>
+        </div>
+    </nav>
+    <div id="container">
+      <div id="top"><h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Todas las Noticias</h3></div>
+      <section id="main">
+          <article class="col">
+              <h3 id="titulos">Su experiencia visitando Chile</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414224-joven-tiktoker-italiano-video-micro-recorrido-vina-del-mar-pdp-16-05-2023.html"> 
+                  <img src="{% static '/img/nacionales/joven.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>El viral viaje en micro de joven italiano en Viña del Mar: "Si no estás sentado, corres el riesgo de caerte</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">condenó al profesor!</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414232-condenan-profesor-que-rompio-torniquete-de-metro-estallido-social-16-05-2023.html"> 
+                  <img src="{% static '/img/nacionales/profesor-carlos-campos_414232_1_6463b4eb4faf1.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Condenan a profesor que rompió torniquete en el Metro durante el estallido social</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Operativo policial terminó mal</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414231-balacera-vina-del-mar-detienen-tres-personas-colegio-renaca-robo-de-vehiculo-16-05-2023.html"> 
+                  <img src="{% static '/img/nacionales/disparocolegio.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Disparos afuera de colegio de Reñaca: Carabineros usan sus armas para detener a acusados de robo</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Artefacto sospechoso</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414226-artefacto-sospechoso-expenitenciaria-santiago-extintor-16-03-2023.html"> 
+                  <img src="{% static '/img/nacionales/carabineros.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Artefacto sospechoso genera operativo a las afueras de la exPenitenciaría de Santiago.</p>
+          </article>
+          <article class="col">
+              <h3 id="titulos">Gran incendio en Lampa</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414242-incendio-lampa-santa-isabel-el-castano-bomberos-fabrica-16-05-2023.html"> 
+                  <img src="{% static '/img/ultimo/incendio.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>ran incendio en Lampa: Estructura afectada sería una fábrica</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Se cayó la casa!</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414220-video-derrumbe-casa-colegio-cerro-polanco-valparaiso-16-05-2023.html"> 
+                  <img src="{% static '/img/nacionales/casa.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>¡Se cayó la casa!": Video muestra derrumbe de vivienda cerca de un colegio en cerro de Valparaíso</p>
+          </article>
+          
+      </section>
+
+    </div>
+    <div id="container">
+      <section id="main">
+          <article class="col">
+              <h3 id="titulos">"Lloron en el parlamento"</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414236-video-johannes-kaiser-lanza-lapiz-a-diputado-benjamin-moreno-jefe-bancada-republicanos-16-05-2023.html"> 
+                  <img src="{% static '/img/ultimo/diputado.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Diputado Kaiser lanza un lápiz al jefe de bancada de Republicanos por no estar atento a su intervención</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Interpelación a ministra Tohá</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/nacional/414201-interpelacion-ministra-carolina-toha-carabineros-seguridad-publica-16-05-2023.html"> 
+                  <img src="{% static '/img/ultimo/ministra.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Interpelación a ministra Tohá: Esta tarde deberá contestar ante la Cámara de Diputados</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">La destacada atleta </h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/deportes/414086-messi-al-barcelona-15-05-2023.html"> 
+                  <img src="{% static '/img/Deportes/correr.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>"La jungla santiaguina me venció": Destacada atleta nacional sufre robo en Metro capitalino</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Polemica en españa!</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/deportes/414098-gol-anulado-en-espana-15-05-2023.htmls"> 
+                  <img src="{% static '/img/Deportes/polemica españa.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Árbitro terminó el primer tiempo justo cuando defensa del Valladolid marcaba un gol.</p>
+          </article>
+          <article class="col">
+              <h3 id="titulos">Quien es?</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/deportes/414161-chileno-lucas-varas-en-mundial-de-kayak.html"> 
+                  <img src="{% static '/img/Deportes/kayak.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>A fines de mayo, un chileno participará en el Mundial de Kayak que se desarrollará en Italia.!</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Nuevo hogar!</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/deportes/413911-bielsa-llega-a-uruguay-12-05-2023.html"> 
+                  <img src="{% static '/img/Deportes/marcelo-bielsa.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Bielsa llega a Uruguay: el Loco aceptó dirigir a la selección nacional tras una ardua negociación</p>
+          </article>
+          
+      </section>
+
+    </div>
+    
+    <div id="container">
+        <section id="main">
+            <article class="col">
+                <h3 id="titulos">Alexis para el mundo!</h3>
+                <div class="img">
+                    <a href="https://www.meganoticias.cl/deportes/414111-alexis-sanchez-figura-en-marsella-15-05-2023.html"> 
+                    <img src="{% static '/img/Deportes/alexis.jpg' %}" alt="#"></a>
+                </div>
+                <br>
+                <p>¡El mejor otra vez! alexis nuevamente brilló con marsella y es elogiado por la prensa</p>
+            </article>
+
+            <article class="col">
+                <h3 id="titulos">Messi al barcelona?</h3>
+                <div class="img">
+                    <a href="https://www.meganoticias.cl/deportes/414086-messi-al-barcelona-15-05-2023.html"> 
+                    <img src="{% static '/img/Deportes/mesi.jpg' %}" alt="W3Schools.com"></a>
+                </div>
+                <br>
+                <p>"Queremos a leo": Presidente de Barcelona, jordan laporta, confirma que busca fichar a messi</p>
+            </article>
+
+            <article class="col">
+                <h3 id="titulos">La destacada atleta </h3>
+                <div class="img">
+                    <a href="https://www.meganoticias.cl/deportes/414086-messi-al-barcelona-15-05-2023.html"> 
+                    <img src="{% static '/img/Deportes/correr.jpg' %}" alt="#"></a>
+                </div>
+                <br>
+                <p>"La jungla santiaguina me venció": Destacada atleta nacional sufre robo en Metro capitalino</p>
+            </article>
+
+            <article class="col">
+                <h3 id="titulos">Polemica en españa!</h3>
+                <div class="img">
+                    <a href="https://www.meganoticias.cl/deportes/414098-gol-anulado-en-espana-15-05-2023.htmls"> 
+                    <img src="{% static '/img/Deportes/polemica españa.jpg' %}" alt="#"></a>
+                </div>
+                <br>
+                <p>Árbitro terminó el primer tiempo justo cuando defensa del Valladolid marcaba un gol.</p>
+            </article>
+            <article class="col">
+                <h3 id="titulos">Quien es?</h3>
+                <div class="img">
+                    <a href="https://www.meganoticias.cl/deportes/414161-chileno-lucas-varas-en-mundial-de-kayak.html"> 
+                    <img src="{% static '/img/Deportes/kayak.jpg' %}" alt="#"></a>
+                </div>
+                <br>
+                <p>A fines de mayo, un chileno participará en el Mundial de Kayak que se desarrollará en Italia.!</p>
+            </article>
+
+            <article class="col">
+                <h3 id="titulos">Nuevo hogar!</h3>
+                <div class="img">
+                    <a href="https://www.meganoticias.cl/deportes/413911-bielsa-llega-a-uruguay-12-05-2023.html"> 
+                    <img src="{% static '/img/Deportes/marcelo-bielsa.jpg' %}" alt="#"></a>
+                </div>
+                <br>
+                <p>Bielsa llega a Uruguay: el Loco aceptó dirigir a la selección nacional tras una ardua negociación</p>
+            </article>
+            
+        </section>
+
+    </div>
+    <div id="container">
+      <section id="main">
+          <article class="col">
+              <h3 id="titulos">Registro de Hogares</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/dato-util/414214-como-ingresar-al-registro-social-de-hogares-rsh-inscripcion-bonos-beneficios-chileatiende-pdp-16-05-2023.html"> 
+                  <img src="{% static '/img/dato/como-ingresar-al-registro-social-de-hogares_414214_1_64639fd3d2355.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Registro Social de Hogares: Así puedes solicitar tu ingreso para optar a bonos y beneficios del Estado</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Quedan pocas semanas</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/dato-util/414198-fecha-cyberday-2023-cyber-day-cuando-es-pdp-16-5-2023.html"> 
+                  <img src="{% static '/img/dato/cyber.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Quedan pocas semanas: ¿Cuándo comenzaría el CyberDay 2023?</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Bono mujer </h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/dato-util/414197-bonos-beneficios-mujeres-mayo-trabajo-mujer-ife-laboral-proteccion-subsidio-protege-pdp-16-05-2023.html"> 
+                  <img src="{% static '/img/dato/bonom.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>"La jungla santiaguina me venci": Destacada atlea nacional sufre robo en Metro capitalino</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">¿Es irrenunciable?</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/dato-util/414144-21-de-mayo-es-feriado-irrenunciable-chile-dias-festivos-pdp-16-5-2023.html"> 
+                  <img src="{% static '/img/dato/feriado.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Árbitro terminó el primer tiempo justo cuando defensa del Valladolid marcaba un gol.</p>
+          </article>
+          <article class="col">
+              <h3 id="titulos">Día del Padre</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/dato-util/414163-extension-linea-2-metro-de-santiago-nuevas-estaciones-comunas-pdp-15-05-2023.html"> 
+                  <img src="{% static '/img/dato/dia del papa.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Día del Padre: Esta es la fecha de la celebración en Chile</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Extensión Línea 2</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/dato-util/414163-extension-linea-2-metro-de-santiago-nuevas-estaciones-comunas-pdp-15-05-2023.html"> 
+                  <img src="{% static '/img/dato/extension-de-la-linea-2-del-metro-de-santiago_403846_1_63d443dc14ce7.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Extensión Línea 2 del Metro de Santiago: ¿Cuáles serán las cuatro nuevas estaciones?</p>
+          </article>
+          
+      </section>
+
+    </div>
+    <div id="container">
+
+      <section id="main">
+          <article class="col">
+              <h3 id="titulos">"aparentemente saludable"</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/calidad-de-vida/414193-endulzantes-artificiales-elevan-azucar-sacarina-sucralosa-diabetes-16-05-2023.html""> 
+                  <img src="{% static '/img/calidad de vida/efectos-endulzantes-artificiales_387339_1_63065a6fa8736.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Estos son los dos endulzantes artificiales que elevan los niveles de azúcar, según estudio</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">cometa!</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/calidad-de-vida/414180-hallazgo-telescopio-espacial-james-webb-detecta-cometa-agua-16-05-2023.html"> 
+                  <img src="{% static '/img/calidad de vida/cometa-read._414180_1_64633a02c0535.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Importante hallazgo del telescopio espacial James Webb: Detecta en el Sistema Solar un cometa con agua</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">OMS no endulzantes </h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/calidad-de-vida/414145-oms-endulzantes-diabetes-enfermedades-cardiovasculares-pdp-15-05-2023.html"> 
+                  <img src="{% static '/img/calidad de vida/1.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>OMS llama a evitar endulzantes: Estas son las enfermedades que están asociadas según los expertos</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">Podrías enfermarte !</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/calidad-de-vida/413837-peligrosa-razon-nunca-lavar-carnes-antes-de-cocinar-fds-14-05-2023.html"> 
+                  <img src="{% static '/img/calidad de vida/carne.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Podrías enfermarte: La razón por la que nunca debes lavar la carne antes de cocinarla</p>
+          </article>
+          <article class="col">
+              <h3 id="titulos">Esto dicen los expertos</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/calidad-de-vida/414115-consumo-jugo-naranja-desayuno-efectos-salud-pdp-15-05-2023.html"> 
+                  <img src="{% static '/img/calidad de vida/por-que-no-deberias-tomar-jugo-de-naranja-al-desayuno_414115_1_646266642663b.jpeg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>¿Por qué no deberías tomar jugo de naranja al desayuno? Esto dicen los experto</p>
+          </article>
+
+          <article class="col">
+              <h3 id="titulos">En el 2050?</h3>
+              <div class="img">
+                  <a href="https://www.meganoticias.cl/calidad-de-vida/413826-como-viviremos-en-el-2050-expertos-entregan-5-predicciones-sobre-el-futuro-de-la-humanidad-fds-14-05-2023.html"> 
+                  <img src="{% static '/img/calidad de vida/50.jpg' %}" alt="#"></a>
+              </div>
+              <br>
+              <p>Cómo viviremos en el 2050: Expertos entregan 5 predicciones sobre el futuro de la humanidad</p>
+          </article>
+          
+      </section>
+
+  </div>
+    <div class="clearfix"></div>
+    <div id="container">
+      <section id="main">
+          <article class="col">
+              <div class="img">
+                <h4>Destacado Nacionales</h4>
+                <iframe src="https://www.youtube.com/embed/DPN4jxWO-dc" title="YouTube video player"
+                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                  gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+              </div>
+              <br>
+              <p >Te gustaria ser vocal de mesa? hombre deja la guagua sola en casa para ir a cumplir con su deber civico!...</p>
+          </article>
+
+          <article class="col">
+              <div class="img ">
+                <h4>Destacado Internacionales</h4>
+                <iframe src="https://www.youtube.com/embed/QA-OFr3Y55A" title="YouTube video player"
+                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                  gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+              </div>
+              <br>
+              <p >Donald Trump a la carcel? el norte americano es declarado culpable por abusos y otras causales!... </p>
+          </article>
+
+          <article class="col">
+              <div class="img">
+                <h4>Destacado Deportes</h4>
+                <iframe  src="https://www.youtube.com/embed/YVQ7DSywNxc" title="YouTube video player"
+                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                  gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+              </div>
+              <br>
+              <p>De tocopilla al para el mundo! Alexis Sanchez es el mejor jugador de francia!...</p>
+          </article>
+      </section>>
+    </div> 
+    
+    
+  <div class="clearfix"></div> <!--para que no se mescle el contenido de abajo con el de arriva "como una barrera"-->
+
+    <!--Footer-->
+    <footer class="text-center text-lg-start text-white" style="background-color: #323232;">
+      <div class="container p-4 pb-0">
+        <div class="row">
+          <!--Empresa-->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <!--Nombre-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" height="30" width="30">
+              caos news
+            </h6>
+            <!--Descripcion-->
+            <p>
+              Dispuestos a colaborar informandote día a día en donde
+              quiera que te encuentres, desde un móvil, computadora, tableta
+              o cualquier medio digital que tengas disponible.
+            </p>
+          </div>
+          
+          <!--Colaboradores-->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              colaboradores
+            </h6>
+            <!--Nombres-->
+            <p class="text-white">
+              Rodrigo Mendoza
+            </p>
+            <p class="text-white">
+              Francisco Campos
+            </p>
+            <p class="text-white">
+              Mariangeles Robinson
+            </p>
+            <p class="text-white">
+              Cachupin
+            </p>
+          </div>
+
+          <!--Patrocinadores-->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Patrocinadores
+            </h6>
+            <!--Nombres-->
+            <p>
+              <a class="text-white" href="https://www.meganoticias.cl" target="_blank">Mega Noticias</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.24horas.cl" target="_blank">24 Horas</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.biobiochile.cl" target="_blank">BioBio</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.chvnoticias.cl" target="_blank">ChvNoticias</a>
+            </p>
+          </div>
+
+          <!--Contacto-->
+          <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Contáctanos
+            </h6>
+            <!--Informacion-->
+            <p>
+              <i class="fas fa-home mr-3">Mensaje Directo</i><br>
+              <a class="text-white" href="{% url 'formulario' %}">Escribenos</a>
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Dirección</i><br>
+              Maipú, Esq. Blanca 8274
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Correo</i><br>
+              contacto@caosnews.cl
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Fono</i><br>
+              +569 85190000
+            </p>
+          </div>
+        </div>
+
+        <!--Copyright-->
+        <div class="row d-flex align-items-center">
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <div class="p-3">
+              @copyright Derechos reservados.
+            </div>
+          </div>
+
+          <!--Redes sociales-->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!--Instagram-->
+            <a
+              class="btn btn-outline-light btn-floating m-1 text-white"
+              role="button"
+              href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"><img src="{% static '/img/CaosNews/instagram.png' %}" width="25" height="25"></i>
+            </a>
+
+            <!--Twiter-->
+            <a
+              class="btn btn-outline-light btn-floating m1 text-white"
+              role="button"
+              href="https://twitter.com/?lang=es" target="_blank">
+              <i class="fab fa-twitter"><img src="{% static '/img/CaosNews/twitter.png' %}" width="25" height="25"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer-->
+
+    
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

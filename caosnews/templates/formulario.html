@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Caos News</title>
+    <link rel="shortcut icon" href="{% static '/img/CaosNews/Logo_CaosNews.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/estilosvideos.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fondo.css' %}">
+</head>
+<body>
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><!--Logo de la pagina que lleva a la pagina de inicio-->
+                <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" alt="Caosnews" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_we' %}">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'noticias' %}">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'tiempo' %}">Clima</a>
+                    </li>
+                </ul>
+              <!--Barra de busqueda-->
+              <div style="text-align: center; height: auto; width: auto;">
+                <form class="d-flex" role="search" style="margin-right: 10px;">
+                  <input class="form-control me-2" type="search" placeholder="buscar noticia" aria-label="search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+              </div><br>
+              <!--opciones de autenticacion-->
+              <div class="d-flex">
+                  <a style="margin-right: 10px; margin-left: 10px;" class="btn btn-primary" href="{% url 'login' %}" role="button">Iniciar Sesión</a>
+                  <a class="btn btn-outline-secondary" href="{% url 'register' %}" role="button">Registrarse</a>
+              </div>
+            </div>
+        </div>
+    </nav>
+    <!--Fin del menu-->
+    <br>
+
+    <!--Formulario-->
+    <div class="container" style="color: aliceblue; position: relative; ;" >
+        <h3 style="text-align: center; border-radius: 80px;border-style:solid
+        ; font-family: Georgia, 'Times New Roman', Times, serif ; color: #E7A01D;">Formulario </h3>
+        <form action="#" method="post" name="datos">
+            <div class="form-group">
+                <label for="rut">Rut: </label>
+                <input type="text" id="rut" name="rut" placeholder="Digite su rut..."
+                 required class="form-control" minlength="10" onfocus="colorFondo(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="nom">Nombre: </label>
+                <input type="text" id="nom" name="nom" placeholder="Digite su nombre..."
+                 required class="form-control" minlength="3" onchange="upperText(this)" onfocus="colorFondo(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="apeP">Apellido Paterno: </label>
+                <input type="text" id="apeP" name="apeP" placeholder="Digite su apellido paterno..."
+                 required class="form-control" minlength="3" onchange="upperText(this)" onfocus="colorFondo(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="apeM">Apellido Materno: </label>
+                <input type="text" id="apeM" name="apeM" placeholder="Digite su apellido materno..."
+                 required class="form-control" minlength="3" onchange="upperText(this)" onfocus="colorFondo(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha de nacimiento: </label>
+                <input type="date" id="fecha" name="fecha" placeholder="Seleccione fecha de nacimiento..."
+                 required class="form-control" onfocus="colorFondo(this)">
+            </div>
+            
+            <div class="form-group">
+                <label for="edad">Edad: </label>
+                <input type="number" id="edad" name="edad" placeholder="Digite su edad..." onfocus="colorFondo(this)"
+                 required class="form-control" min="14" max="110">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <select id="genero" class="form-control" onfocus="colorFondo(this)">
+                    <option value="0">Seleccione género..</option>
+                    <option value="1">Mujer</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">Otro género</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Que desea ingresar?</label>
+                <select id="genero" class="form-control" onfocus="colorFondo(this)">
+                    <option value="0">Seleccione</option>
+                    <option value="1">Reclamo</option>
+                    <option value="2">Sugerencia</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="genero">Ingrese aquí su Reclamo o sugerencia:</label>
+                <textarea id="carta" class="form-control" rows="7" >
+                </textarea>
+            </div>
+            <br>
+            <input type="button" style="background-color:rgb(1, 255, 255, 0.897); font-weight: bold;" value="Crear Carta" onclick="CrearCarta()" class="btn btn-success">
+            <input type="submit" style="background-color: rgba(51, 199, 30); font-weight: bold; color: white;" value="Enviar Formulario" class="btn btn-warning"> 
+            <input type="reset" style="background-color: rgb(255, 255, 255); font-weight: bold;" value="Otro Ingreso" class="btn btn-warning"> 
+        </form>
+        <div id="error"></div>
+         
+
+
+    </div>
+    <br>
+    <!--Fin formulario-->
+
+    <!--Footer-->
+    <footer class="text-center text-lg-start text-white" style="background-color: #323232;">
+      <div class="container p-4 pb-0">
+        <div class="row">
+          <!--Empresa-->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <!--Nombre-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              <img src="{% static '/img/CaosNews/Logo_CaosNews.png' %}" height="30" width="30">
+              caos news
+            </h6>
+            <!--Descripcion-->
+            <p>
+              Dispuestos a colaborar informandote día a día en donde
+              quiera que te encuentres, desde un móvil, computadora, tableta
+              o cualquier medio digital que tengas disponible.
+            </p>
+          </div>
+          
+          <!--Colaboradores-->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              colaboradores
+            </h6>
+            <!--Nombres-->
+            <p class="text-white">
+              Rodrigo Mendoza
+            </p>
+            <p class="text-white">
+              Francisco Campos
+            </p>
+            <p class="text-white">
+              Mariangeles Robinson
+            </p>
+            <p class="text-white">
+              Cachupin
+            </p>
+          </div>
+
+          <!--Patrocinadores-->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Patrocinadores
+            </h6>
+            <!--Nombres-->
+            <p>
+              <a class="text-white" href="https://www.meganoticias.cl" target="_blank">Mega Noticias</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.24horas.cl" target="_blank">24 Horas</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.biobiochile.cl" target="_blank">BioBio</a>
+            </p>
+            <p>
+              <a class="text-white" href="https://www.chvnoticias.cl" target="_blank">ChvNoticias</a>
+            </p>
+          </div>
+
+          <!--Contacto-->
+          <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mt-3">
+            <!--Titulo-->
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Contáctanos
+            </h6>
+            <!--Informacion-->
+            <p>
+              <i class="fas fa-home mr-3">Mensaje Directo</i><br>
+              <a class="text-white" href="{% url 'formulario' %}">Escribenos</a>
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Dirección</i><br>
+              Maipú, Esq. Blanca 8274
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Correo</i><br>
+              contacto@caosnews.cl
+            </p>
+            <p>
+              <i class="fas fa-home mr-3">Fono</i><br>
+              +569 85190000
+            </p>
+          </div>
+        </div>
+
+        <!--Copyright-->
+        <div class="row d-flex align-items-center">
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <div class="p-3">
+              @copyright Derechos reservados.
+            </div>
+          </div>
+
+          <!--Redes sociales-->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!--Instagram-->
+            <a
+              class="btn btn-outline-light btn-floating m-1 text-white"
+              role="button"
+              href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"><img src="{% static '/img/CaosNews/instagram.png' %}" width="25" height="25"></i>
+            </a>
+
+            <!--Twiter-->
+            <a
+              class="btn btn-outline-light btn-floating m1 text-white"
+              role="button"
+              href="https://twitter.com/?lang=es" target="_blank">
+              <i class="fab fa-twitter"><img src="{% static '/img/CaosNews/twitter.png' %}" width="25" height="25"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer-->
+
+    
+    
+
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
